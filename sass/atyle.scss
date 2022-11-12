@@ -1,0 +1,98 @@
+@mixin purpple{
+    background: #6d10db;
+}
+@mixin roboto {
+    font-family: "Roboto","Arial",sans-serif
+}
+
+body.open{
+
+    .sidebar{
+        width: 260px;
+    }
+}
+
+body {
+    background: #121212;
+    margin: 0;
+
+    .sidebar {
+        position: absolute;
+        overflow: hidden;
+        top: 0;
+        left: 0;
+        width: 70px;
+        height: 100%;
+        @include purpple;
+        transition: width 0.4s;
+
+        &-inner{
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 300px;
+        }
+
+        &-logo{
+            width: 35px;
+            height: 35px;
+        }
+
+        &-burger{
+            width: 100%;
+            height: 72px;
+            display: flex;
+            place-items: center;
+            gap: 25px;
+            padding: 0 25px;
+            background-size: 100px;
+            // justify-content: space-around;
+            // background: url(./assets/icon-burger.svg)
+            // no-repeat center center;
+
+        }
+
+        &-header{
+            @include roboto;
+            color:#f9f9f9;
+        }
+
+        &-menu{
+            display: grid;
+
+            button{
+                display: flex;
+               @include purpple;
+                gap: 25px;
+                border: none;
+                align-items: center;
+                height: 60px;
+                font-family: 'Poppins';
+                font-size: 16px;
+                font-weight: 200;
+                letter-spacing: 2px;
+                line-height: 1;
+                padding: 0 25px;
+
+                img{
+                    width: 35px;
+                    height: 35px;
+                }
+
+                span{
+                    color: #f9f9f9;
+                    @include roboto;
+                }
+            }
+
+            .has-border{
+                padding-bottom: 16px;
+                margin-bottom: 16px;
+                border-bottom: 2px solid rgba(255, 255, 255, 0.12) !important ;
+            }
+        }
+    }  
+}
+
+
+
